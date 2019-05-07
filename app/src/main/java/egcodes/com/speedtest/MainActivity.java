@@ -30,9 +30,13 @@ import java.util.List;
 import egcodes.com.speedtest.test.HttpDownloadTest;
 import egcodes.com.speedtest.test.HttpUploadTest;
 import egcodes.com.speedtest.test.PingTest;
-
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends AppCompatActivity {
+    private AdView mAdView;
+
     static int position = 0;
     static int lastPosition = 0;
     GetSpeedTestHostsHandler getSpeedTestHostsHandler = null;
@@ -50,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, "ca-app-pub-3308520213502941~1034075722");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         final Button startButton = (Button) findViewById(R.id.startButton);
         final DecimalFormat dec = new DecimalFormat("#.##");

@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startButton.setEnabled(false);
-
+               
                 //Restart test icin eger baglanti koparsa
                 if (getSpeedTestHostsHandler == null) {
                     getSpeedTestHostsHandler = new GetSpeedTestHostsHandler();

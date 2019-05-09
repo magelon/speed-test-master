@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startButton.setEnabled(false);
-               
+
                 //Restart test icin eger baglanti koparsa
                 if (getSpeedTestHostsHandler == null) {
                     getSpeedTestHostsHandler = new GetSpeedTestHostsHandler();
